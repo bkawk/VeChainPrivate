@@ -1,0 +1,31 @@
+{
+  "name": "vechain-private",
+  "version": "1.0.0",
+  "description": "Simple node app to create a transaction",
+  "main": "index.js",
+  "repository": "https://github.com/bkawk/VeChainPrivate.git",
+  "author": "bkawk",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "tsc-watch --project . --outDir ./dist --onSuccess \"nodemon ./dist/index.js\"",
+    "devtest": "jest --watch",
+    "test": "jest",
+    "build": "tsc",
+    "start": "node ./dist/app.js",
+    "docker": "docker-compose up --build"
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.20",
+    "bignumber.js": "^9.0.1",
+    "dotenv": "^8.2.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "ts-jest": "^26.4.4",
+    "tsc": "^1.20150623.0",
+    "tsc-watch": "^4.2.9",
+    "tslint": "^6.1.3",
+    "typescript": "^4.1.3"
+  }
+}
