@@ -19,7 +19,7 @@ const createTransaction = async (to: string, amount: number) => {
     const privateKey = mnemonic.derivePrivateKey(words);
     const blockRef = await web3.eth.getBlockRef();
     const chainTag = await web3.eth.getChainTag();
-    const value = new BigNumber(amount).times(1e18).integerValue().toString();
+    const value = new BigNumber(amount).times(1e18).toFixed(0, BigNumber.ROUND_FLOOR);
     const clauses = [{ data: '0x', to, value }];
     const gas = Transaction.intrinsicGas(clauses);
     const body: Transaction.Body = {
