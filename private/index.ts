@@ -53,7 +53,7 @@ const createTransaction = async (to: string, amount: number) => {
 };
 
 
-const REGION = process.env.SQS_REGION;
+const region = process.env.SQS_REGION;
 const queueURL = process.env.SQS_QUEUE_URL;
 const params = {
   AttributeNames: ['SentTimestamp'],
@@ -63,7 +63,7 @@ const params = {
   VisibilityTimeout: 20,
   WaitTimeSeconds: 0,
 };
-const sqs = new SQSClient({ region: REGION });
+const sqs = new SQSClient({ region });
 
 const run = async () => {
   try {
